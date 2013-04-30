@@ -9,7 +9,9 @@ public static void main ( String[] args)
   do
   {
   	Dice2 myDice2 = new Dice2(); 
+
   	diced1= Dice2.Roll_1_Dice();
+
   	String message1 = String.format("DICE STATIC %d",diced1 ); 
   	JOptionPane.showMessageDialog(null, message1); 
   	
