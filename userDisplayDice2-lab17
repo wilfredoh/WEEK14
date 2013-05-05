@@ -1,0 +1,44 @@
+/* Wilfredo henriquez 
+ * The Program to display the Satic method was modified so the user enter the
+ * times to roll and maximum value of the Dice, instead of a Fix paramters passed by Value
+ */
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class displaydice
+
+{
+public static void main ( String[] args)
+{
+   int dicevalue, count;
+   int rollDiceValue, rollDiceTimes;
+  String answer="";  
+  do
+  {
+ 
+       Dice2 myCount = new Dice2();	
+       // dicevalue= Dice2.RollDice2(2, 6); // fix done in class 
+       
+         // Modified so that user can place the Number of Roll and Maximum
+  	String  inputRoll = JOptionPane.showInputDialog("Enter Number of times to Roll the Dice");
+  	rollDiceTimes = Integer.parseInt(inputRoll);
+  	String  inputValue = JOptionPane.showInputDialog("Enter Number Maximum Value Dice");
+  	rollDiceValue = Integer.parseInt(inputValue);
+  	
+  	 dicevalue= Dice2.RollDice2(rollDiceTimes, rollDiceValue);
+  	 
+  	 count = myCount.RollCount();
+  	 
+  	 String  message1 = String.format("Roll DiceSum= %d, RollCount Static  = %d \n" +
+                 "The user Enter %d Times to Roll, and Maximum Value %d",
+                  dicevalue, count, rollDiceTimes, rollDiceValue );
+  	 JOptionPane.showMessageDialog(null, message1); 
+  	 
+  	 //  String  message1 = String.format("Dice= %d, Count=%d ",dicevalue, count  ); // Done in class
+           
+    answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+ 
+  } while (answer.equalsIgnoreCase("y"));
+  	
+  }// end of Main
+} // end of Class Displaydice
