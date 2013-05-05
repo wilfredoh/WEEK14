@@ -1,0 +1,53 @@
+/* Wilfredo Henriquez
+ * Dice "class" that keep track of the Number of time the dice has been rolled
+ * for "static vs Public Methods  Separately
+ * Created 2 RollCount methods. One return statics count and one reurn the regular count  
+ */
+public class DiceClassLab18 
+{
+       
+      public static  int  lifeRoll1;
+      public static  int  myrandom1;
+      private   int  lifeRoll2;
+    	private   int myrandom2;
+      
+  	// STATIC METHOD
+      public static int  RollDice1( int number)
+  	 	{    
+  		myrandom1=0;
+  		for (int i = 0; i < number; i++ )
+  		  {
+
+  		    myrandom1 = myrandom1 + (1 + (int)(Math.random() *6 ));
+  		    lifeRoll1 = lifeRoll1 + 1;
+  		   }
+  		   return myrandom1; 
+  	 	   }
+      
+      public static int RollCountStatic()   // method to retrieve Static variable "lifeRoll1"
+  		{			
+  			return lifeRoll1;		
+  		}
+      
+      
+      // PUBLIC METHOD   
+      public int  RollDice2( int number )
+  	 	{    
+  		myrandom2=0;
+  		for (int i = 0; i < number; i++ )
+  		  {
+
+  		    myrandom2 = myrandom2 +(1 + (int)(Math.random() * 6 ));
+  		    lifeRoll2 = lifeRoll2 + 1;
+  		   }
+  		   return myrandom2; 
+  	 	   }
+
+      public int RollCountRegular()   // method to retrieve instantiated variable "lifeRoll2"
+  		{			
+  			return lifeRoll2;		
+  		}
+      
+  	
+}
+
