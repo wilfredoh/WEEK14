@@ -1,0 +1,52 @@
+/*   WILFREDO HENRIQUEZ
+ *  This Test Program allows the user to enter the Number of times to roll the Dice
+ *  the Limit of the Dice to Roll is 1 to 6
+ *  This Program Instantiate the Variable 'mydice1" of DiceClassLab18"
+ *  to access the the PUBLIC 'RollDice2" Method
+ *  The STATIC method 'RollDice1" is accessed Directly from the class 
+ */
+
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class DisplayDiceClassLab18 
+
+{
+  public static void main ( String[] args)
+   {
+   int rollDiceStatic = 0;
+   int rollDiceRegular = 0;
+   int countStatic, countRegular;
+  
+   int rollDiceTimes = 0;
+  String answer="";  
+  do
+  {
+ 
+  	DiceClassLab18 mydice1 = new DiceClassLab18();
+  	
+  
+  	String  inputRoll = JOptionPane.showInputDialog("Enter Number of times to Roll the Dice");
+  	rollDiceTimes = Integer.parseInt(inputRoll);
+  
+  	rollDiceRegular= DiceClassLab18.RollDice1(rollDiceTimes); // Static Acess to the Method 
+  	rollDiceStatic= mydice1.RollDice2(rollDiceTimes); // PUBLIC call
+  
+  	 countStatic = DiceClassLab18.RollCountStatic(); // Static access to the Method roll count
+  	 countRegular =mydice1.RollCountRegular(); // public Method access once the Variable has been Instantiated
+  	 
+  	
+  	 
+  	 String  message1 = String.format("StaticRoll  DiceSum= %d, RollCountStatic  = %d \n" +
+  	 		                          "RegularRoll DiceSum= %d, RollCountRegular =%d \n" +
+  			                          "The user Enter %d Times to Roll the dice  1-to-6",
+  	 		                          rollDiceStatic, countStatic, rollDiceRegular, countRegular,rollDiceTimes ); 
+        JOptionPane.showMessageDialog(null, message1); 
+ 
+
+    answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+ 
+  } while (answer.equalsIgnoreCase("y"));
+  	
+ } // end of main
+} // end of class
